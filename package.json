@@ -1,0 +1,22 @@
+{
+  "name": "abuseipdb-blocklist-creator4nginx",
+  "version": "1.0.0",
+  "description": "Downloads the blacklist from abuseipdb.com and creates a textfile that can be used by nginx for blocking malicious requests.",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Security",
+    "Nginx",
+    "abuseipdb"
+  ],
+  "author": "Dirk Pörschke",
+  "license": "MIT",
+  "dependencies": {
+    "abort-controller": "^3.0.0",
+    "node-fetch": "^3.0.0"
+  }
+}
