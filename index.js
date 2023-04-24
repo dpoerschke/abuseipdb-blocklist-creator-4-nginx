@@ -28,7 +28,7 @@ if (keyfiles.length > 0) {
       "Found more than 1 file with extension .key in in " + pathToKeys
     );
     console.log(
-      "Make sure that there is only 1 file with extension .key in that directory."
+      "Make sure that there is only 1 file with extension .key in the apikey-directory."
     );
     console.log("");
   } else {
@@ -36,7 +36,7 @@ if (keyfiles.length > 0) {
 
     if (dapiKey.trim() === "") {
       console.log("\x1b[31mProblem occured:\x1b[0m");
-      console.log("The key-File is empty: " + pathToKeys + keyfiles[0]);
+      console.log("The key-file is empty: " + pathToKeys + keyfiles[0]);
       console.log("Can't continue without a key. Sorry!");
       infotext();
     } else {
@@ -68,7 +68,7 @@ if (keyfiles.length > 0) {
         if (data.indexOf("AbuseIPDB APIv2 Server") > -1 || data.length < 200) {
           console.log("\x1b[31mProblem occured:\x1b[0m");
           console.log(
-            "Could not receive the ip blocklist. Please make sure that the api-key is valid. Received this instead:"
+            "Could not receive the ip blocklist. Please make sure that the api-key is valid. I have received this instead:"
           );
           console.log(data);
         } else {

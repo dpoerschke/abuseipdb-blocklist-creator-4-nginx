@@ -1,5 +1,5 @@
 
-A small project from a few years ago - I hope you find it useful. Please scroll down for german translation.
+A little project from a few years ago - I hope you find it useful. Please scroll down for german translation.
 
 
 # abuseipdb-blocklist-creator-4-nginx
@@ -25,9 +25,9 @@ To make Nginx reload the blocklist regularly, you can use e.g. a cron task that 
 
 **Caution:** If *restart* and not *reload* is used here, Nginx will restart in any case, even if the configuration should be faulty. In this case Nginx exits immediately with an error and the web presence is no longer accessible. The option *reload* on the other hand ensures that Nginx checks the configuration for correct syntax before reloading it and only then accepts it. If the syntax is not correct, Nginx keeps the current configuration (in ram) and the website is still reachable. 
 
-# setup
+# Setup
 abuseipdb-blocklist-creator was developed and tested with NodeJS version `14.17.2`. NodeJS version 12.x is not supported.
-To install all necessary dependencies you have to install once 
+To install all necessary dependencies 
 > npm install 
 
 must be called.
@@ -38,17 +38,17 @@ First register at www.abuseipdb.com.
 Then you can create an API key there at www.abuseipdb.com/account/api. This is a text that looks something like this:
 > 69a5c964d91234523ee9153b16bc34d56f43212345d67323a0a6cd22abcde2dec4d755140d3ff7b1
 
-(This is only an example, the key is not valid).
+(this is only an example, the key is not valid).
 
 Copy the API key to the clipboard and change to the subdirectory apikey. Create a file there with the extension .key, for example:
 > myApi.key
 
-Paste the API key from the clipboard into the meinapi.key file and save the file. The abuseipdb-blocklist-creator will automatically read the file with the extension .key in the apikey directory at startup.
+Paste the API key from the clipboard into the myApi.key file and save the file. The abuseipdb-blocklist-creator will automatically read the file with the extension .key in the apikey directory at startup.
 
 # Start abuseipdb-blocklist-creator-4-nginx
 > node index.js
 
-abuseipdb-blocklist-creator is executed once. If you want to update the blocklist regularly, you have to run this command regularly e.g. via cron task. Alternatively you can use the Process Manager PM2.
+abuseipdb-blocklist-creator is executed once. If you want to update the blocklist regularly, you have to run this command regularly e.g. via cron task. Alternatively you can use the Process Manager PM2 to do so.
 
 # Notes about abuseipdb
 The IP blocklist of abuseipdb.com includes 10,000 IP addresses for a **free** account. This limit is set by the API. A blocklist with 10.000 IP entries is about 200kb in size. If a free account is used, the blocklist can be accessed a maximum of 5x per day.
@@ -62,7 +62,7 @@ The documentation of abuseipdb.com can be found here:
 https://docs.abuseipdb.com/?python#blocklist-endpoint
 
 Nginx PLUS provides its own API for 'denylisting' IP addresses, but this does not seem to provide a way to block a large number of IP addresses at once (see https://docs.nginx.com/nginx/admin-guide/security-controls/denylisting-ip-addresses/ ).
-The approach of abuseipdb-blocklist-creator works with the free version of Nginx, too.
+The approach of abuseipdb-blocklist-creator works with the free version of [Nginx](https://nginx.org) as well.
 
 
 ---
@@ -124,4 +124,4 @@ Die Dokumentation von abuseipdb.com ist hier zu finden:
 https://docs.abuseipdb.com/?python#blocklist-endpoint
 
 Nginx PLUS bietet eine eigene API zum 'Denylisting' von IP Adressen, allerdings scheint diese keine Möglichkeit zu bieten um auf einmal eine große Anzahl von IP Adressen zu sperren (siehe https://docs.nginx.com/nginx/admin-guide/security-controls/denylisting-ip-addresses/ ).
-Der Ansatz von abuseipdb-blocklist-creator funktioniert hingegen auch mit der kostenlosen Version von Nginx.
+Der Ansatz von abuseipdb-blocklist-creator funktioniert hingegen auch mit der kostenlosen Version von [Nginx](https://nginx.org).
